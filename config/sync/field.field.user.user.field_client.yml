@@ -1,0 +1,26 @@
+uuid: c261ae54-5f3a-43cd-9d61-c33397db0e97
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_client
+  module:
+    - user
+id: user.user.field_client
+field_name: field_client
+entity_type: user
+bundle: user
+label: Client
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:plf_client'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+    auto_create: false
+field_type: entity_reference

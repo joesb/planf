@@ -1,0 +1,9 @@
+name: Plan F Client
+type: module
+description: 'Provides PlanfClient entity.'
+package: Plan F Admin
+core: 8.x
+# These modules are required by the tests, must be available at bootstrap time
+dependencies:
+  - options
+  - entity_reference

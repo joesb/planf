@@ -1,0 +1,19 @@
+# Define the menu links for this module
+plf_client.admin:
+  title: 'Clients'
+  route_name: plf_client.admin
+  parent: system.admin_content
+  description: 'List and edit clients.'
+#entity.plf_client.collection:
+#  title: 'Client Listing'
+#  route_name: entity.plf_client.collection
+#  description: 'List Clients'
+#  weight: 10
+plf_client.admin.structure.settings:
+  title: 'Client Settings'
+  description: 'Configure Client entity'
+  route_name:  plf_client.client_settings
+  parent: system.admin_structure
+plf_client.add_page:
+  title: 'Add client'
+  route_name: entity.plf_client.add_form

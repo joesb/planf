@@ -1,0 +1,47 @@
+uuid: 339bac45-f173-469d-8685-f72d660aa4d9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.plf_client.plf_client.field_client_logo
+    - field.field.plf_client.plf_client.field_client_website
+    - image.style.thumbnail
+  module:
+    - image
+    - link
+    - plf_client
+id: plf_client.plf_client.default
+targetEntityType: plf_client
+bundle: plf_client
+mode: default
+content:
+  field_client_logo:
+    type: image_image
+    weight: 1
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_client_website:
+    weight: 2
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+  name:
+    type: string_textfield
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  user_id:
+    type: entity_reference_autocomplete
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    weight: 3
+    third_party_settings: {  }
+hidden: {  }

@@ -1,0 +1,46 @@
+uuid: 215d31b0-bab5-4f13-aa3a-4cbfde470b73
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.plf_client.full
+    - field.field.plf_client.plf_client.field_client_logo
+    - field.field.plf_client.plf_client.field_client_website
+    - image.style.medium
+  module:
+    - image
+    - link
+    - plf_client
+id: plf_client.plf_client.full
+targetEntityType: plf_client
+bundle: plf_client
+mode: full
+content:
+  field_client_logo:
+    type: image
+    weight: 1
+    label: hidden
+    settings:
+      image_style: medium
+      image_link: ''
+    third_party_settings: {  }
+  field_client_website:
+    weight: 2
+    label: inline
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+  name:
+    label: hidden
+    type: string
+    weight: 0
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden:
+  user_id: true

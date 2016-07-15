@@ -1,0 +1,26 @@
+# Define the 'local' links for the module
+
+client.admin:
+  title: Clients
+  route_name: plf_client.admin
+  base_route: system.admin_content
+client.settings_tab:
+  route_name: plf_client.client_settings
+  title: Settings
+  base_route: plf_client.client_settings
+
+client.view:
+  route_name: entity.plf_client.canonical
+  base_route: entity.plf_client.canonical
+  title: View
+
+client.page_edit:
+  route_name: entity.plf_client.edit_form
+  base_route: entity.plf_client.canonical
+  title: Edit
+
+client.delete_confirm:
+  route_name:  entity.plf_client.delete_form
+  base_route:  entity.plf_client.canonical
+  title: Delete
+  weight: 10

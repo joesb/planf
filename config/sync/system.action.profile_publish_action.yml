@@ -1,0 +1,13 @@
+uuid: a8400f0d-fab0-4298-a472-060deb2354f4
+langcode: en
+status: true
+dependencies:
+  module:
+    - profile
+_core:
+  default_config_hash: dz5_l09fj1m6b4MZVYlHjYHsXSlG9aQHGGoupPb8phg
+id: profile_publish_action
+label: 'Publish selected profile'
+type: profile
+plugin: profile_publish_action
+configuration: {  }

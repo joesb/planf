@@ -1,0 +1,13 @@
+uuid: e958508e-a033-49ac-9ab4-4066f1148b31
+langcode: en
+status: true
+dependencies:
+  module:
+    - profile
+_core:
+  default_config_hash: 0Pbftv_ldvo_ywcpQQQRBSTnqJG0i7tf2saMa1_uIPI
+id: profile_unpublish_action
+label: 'Unublish selected profile'
+type: profile
+plugin: profile_unpublish_action
+configuration: {  }

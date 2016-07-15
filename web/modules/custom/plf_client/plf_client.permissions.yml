@@ -1,0 +1,30 @@
+add client entity:
+  title: 'Add Plan F clients'
+  description: 'Add new Plan F clients.'
+access client list:
+  title: 'Access Plan F client list'
+  description: 'Access the Plan F client listing page.'
+view clients:
+  title: 'View any Plan F client'
+  description: 'Access any Plan F client page.'
+view client entity:
+  title: 'View my Plan F client'
+  description: 'Access my Plan F client page.'
+edit clients:
+  title: 'Edit any Plan F client'
+  description: 'Edit any Plan F client page.'
+edit client entity:
+  title: 'Edit my Plan F client'
+  description: 'Edit my Plan F client page.'
+delete clients:
+  title: 'Delete any Plan F client'
+  description: 'Delete any Plan F client page.'
+delete client entity:
+  title: 'Delete my Plan F client'
+  description: 'Delete my Plan F client page.'
+administer clients:
+  title: 'Administer any Plan F client'
+  description: 'Administrate any Plan F client.'
+administer my client:
+  title: 'Administer my Plan F client'
+  description: 'Administrate my Plan F client.'

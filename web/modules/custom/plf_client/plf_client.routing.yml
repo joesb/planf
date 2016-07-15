@@ -1,0 +1,64 @@
+# Route name can be used in several place (links, redirects, local actions etc.)
+entity.plf_client.canonical:
+  path: '/client/{plf_client}'
+  defaults:
+  # Calls the view controller, defined in the annotation of the client entity
+    _entity_view: 'plf_client'
+    _title: 'Plan F Client'
+  requirements:
+  # Calls the access controller of the entity, $operation 'view'
+    _entity_access: 'plf_client.view'
+
+plf_client.admin:
+  path: '/admin/content/clients'
+  defaults:
+    _title: 'Clients'
+    _controller: '\Drupal\plf_client\Controller\ClientController::adminPage'
+    type: 'new'
+  requirements:
+    _permission: 'administer clients'
+
+entity.plf_client.collection:
+  path: '/client'
+  defaults:
+  # Calls the list controller, defined in the annotation of the client entity.
+    _entity_list: 'plf_client'
+    _title: 'Client List'
+  requirements:
+  # Checks for permission directly.
+    _permission: 'access client list'
+
+entity.plf_client.add_form:
+  path: '/client/add'
+  defaults:
+  # Calls the form.add controller, defined in the client entity.
+    _entity_form: plf_client.add
+    _title: 'Add Client'
+  requirements:
+    _entity_create_access: 'plf_client'
+
+entity.plf_client.edit_form:
+  path: '/client/{plf_client}/edit'
+  defaults:
+  # Calls the form.edit controller, defined in the client entity.
+    _entity_form: plf_client.edit
+    _title: 'Edit Client'
+  requirements:
+    _entity_access: 'plf_client.edit'
+
+entity.plf_client.delete_form:
+  path: '/client/{plf_client}/delete'
+  defaults:
+    # Calls the form.delete controller, defined in the client entity.
+    _entity_form: plf_client.delete
+    _title: 'Delete Client'
+  requirements:
+    _entity_access: 'plf_client.delete'
+
+plf_client.client_settings:
+  path: 'admin/structure/client_settings'
+  defaults:
+    _form: '\Drupal\plf_client\Form\ClientSettingsForm'
+    _title: 'Client Settings'
+  requirements:
+    _permission: 'administer client entity'

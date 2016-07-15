@@ -1,0 +1,122 @@
+<?php
+/**
+ * @file plf_client.module
+ * Support for Plan F clients.
+ */
+
+use Drupal\Core\Render\Element;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Url;
+use Drupal\plf_client\Entity\Client;
+use Drupal\plf_client\ClientInterface;
+use Drupal\Core\Field\FieldDefinitionInterface;
+use Drupal\Core\Session\AccountInterface;
+use Drupal\Core\Field\FieldItemListInterface;
+use Drupal\Core\Access\AccessResult;
+
+/**
+ * Implements hook_theme().
+ */
+function plf_client_theme() {
+  return array(
+    'plf_client' => array(
+      'render element' => 'elements',
+    ),
+  );
+}
+
+/**
+ * Generates an array which displays a client detail page.
+ *
+ * @param \Drupal\plf_client\Entity\Client $client
+ *   A Plan F client object.
+ * @param string $view_mode
+ *   View mode; e.g., 'full', 'teaser', etc.
+ * @param string $langcode
+ *   (optional) A language code to use for rendering. Defaults to the global
+ *   content language of the current request.
+ *
+ * @return array
+ *   A $page element suitable for use by drupal_render().
+ */
+function plf_client_view(Client $client, $view_mode = 'full', $langcode = NULL) {
+  return entity_view($client, $view_mode, $langcode);
+}
+
+/**
+ * Constructs a drupal_render() style array from an array of loaded clients.
+ *
+ * @param array $clients
+ *   An array of clients as returned by Client::loadMultiple().
+ * @param string $view_mode
+ *   View mode; e.g., 'full', 'teaser', etc.
+ * @param string $langcode
+ *   (optional) A language code to use for rendering. Defaults to the global
+ *   content language of the current request.
+ *
+ * @return array
+ *   An array in the format expected by drupal_render().
+ */
+function plf_client_view_multiple(array $clients, $view_mode = 'full', $langcode = NULL) {
+  return entity_view_multiple($clients, $view_mode, $langcode);
+}
+
+/**
+ * Prepares variables for client templates.
+ *
+ * Default template: plf-client.html.twig.
+ *
+ * @param array $variables
+ *   An associative array containing:
+ *   - elements: An associative array containing the client and any
+ *     fields attached to the client. Properties used:
+ *     - #plf_client: A \Drupal\taxonomy\TermInterface object.
+ *     - #view_mode: The current view mode for this taxonomy term, e.g.
+ *       'full' or 'teaser'.
+ *   - attributes: HTML attributes for the containing element.
+ */
+function plf_client_preprocess_plf_client(&$variables) {
+  $variables['view_mode'] = $variables['elements']['#view_mode'];
+  $variables['client'] = $variables['elements']['#plf_client'];
+  /** @var \Drupal\plf_client\ClientInterface $client */
+  $client = $variables['client'];
+
+  $variables['url'] = $client->url();
+  // We use name here because that is what appears in the UI.
+  $variables['name'] = $variables['elements']['name'];
+  unset($variables['elements']['name']);
+  $variables['page'] = $variables['view_mode'] == 'full' && plf_client_client_is_page($client);
+
+  // Helpful $content variable for templates.
+  $variables['content'] = array();
+  foreach (Element::children($variables['elements']) as $key) {
+    $variables['content'][$key] = $variables['elements'][$key];
+  }
+}
+
+
+/**
+ * Returns whether the current page is the page of the passed-in client.
+ *
+ * @param \Drupal\plf_client\Entity\Client $client
+ *   A PlanF client entity.
+ */
+function plf_client_client_is_page(Client $client) {
+  if (\Drupal::routeMatch()->getRouteName() == 'entity.plf_client.canonical' && $page_client_id = \Drupal::routeMatch()->getRawParameter('plf_client')) {
+    return $page_client_id == $client->id();
+  }
+  return FALSE;
+}
+
+/**
+ * Implements hook_entity_field_access().
+ */
+function plf_client_entity_field_access($operation, FieldDefinitionInterface $field_definition, AccountInterface $account, FieldItemListInterface $items = NULL) {
+  if ($field_definition->getName() == 'field_client' && $operation == 'edit') {
+    if (in_array('administrator', $account->getRoles())) {
+      return AccessResult::allowed();
+    }
+    return AccessResult::forbidden();
+  }
+  return AccessResult::neutral();
+}

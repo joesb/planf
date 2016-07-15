@@ -1,0 +1,20 @@
+uuid: ab47b9eb-5138-4d62-96ab-9023cebd5c58
+langcode: en
+status: true
+dependencies:
+  module:
+    - plf_client
+    - user
+id: user.field_client
+field_name: field_client
+entity_type: user
+type: entity_reference
+settings:
+  target_type: plf_client
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

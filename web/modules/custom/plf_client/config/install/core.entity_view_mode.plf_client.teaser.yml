@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - plf_client
+id: plf_client.teaser
+label: 'Teaser'
+targetEntityType: plf_client
+cache: true

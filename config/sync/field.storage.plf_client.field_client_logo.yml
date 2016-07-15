@@ -1,0 +1,30 @@
+uuid: cacbf8be-fe9a-43dd-824e-4cf04f0a2cf9
+langcode: en
+status: true
+dependencies:
+  module:
+    - file
+    - image
+    - plf_client
+id: plf_client.field_client_logo
+field_name: field_client_logo
+entity_type: plf_client
+type: image
+settings:
+  default_image:
+    uuid: null
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  target_type: file
+  display_field: false
+  display_default: false
+  uri_scheme: public
+module: image
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

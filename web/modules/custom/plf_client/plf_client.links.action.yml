@@ -1,0 +1,12 @@
+# All action links for this module
+
+plf_client.add:
+  # Which route will be called by the link
+  route_name: entity.plf_client.add_form
+  title: 'Add Client'
+
+  # Where will the link appear, defined by route name.
+  appears_on:
+#    - entity.plf_client.collection
+#    - entity.plf_client.canonical
+    - plf_client.admin
