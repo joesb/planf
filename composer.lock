@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "34f763179b0ec5b63d2549ff1d0eadfe",
-    "content-hash": "8583d3af4612d66d19c56bcd92d5e8fd",
+    "hash": "55080c25c65ada1d7cca48eb2ccc5d9d",
+    "content-hash": "b1a2097a4119ad37190363b836c71f07",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -298,12 +298,12 @@
             "version": "1.0.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/consolidation-org/annotated-command.git",
+                "url": "https://github.com/consolidation/annotated-command.git",
                 "reference": "ed279df30b9386fd8e523003dc679421a87c52e0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/consolidation-org/annotated-command/zipball/ed279df30b9386fd8e523003dc679421a87c52e0",
+                "url": "https://api.github.com/repos/consolidation/annotated-command/zipball/ed279df30b9386fd8e523003dc679421a87c52e0",
                 "reference": "ed279df30b9386fd8e523003dc679421a87c52e0",
                 "shasum": ""
             },
@@ -349,12 +349,12 @@
             "version": "1.0.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/consolidation-org/output-formatters.git",
+                "url": "https://github.com/consolidation/output-formatters.git",
                 "reference": "6428d8fb30c9ed3b96314580808b3e4415b46dd9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/consolidation-org/output-formatters/zipball/6428d8fb30c9ed3b96314580808b3e4415b46dd9",
+                "url": "https://api.github.com/repos/consolidation/output-formatters/zipball/6428d8fb30c9ed3b96314580808b3e4415b46dd9",
                 "reference": "6428d8fb30c9ed3b96314580808b3e4415b46dd9",
                 "shasum": ""
             },
@@ -982,7 +982,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/bootstrap-8.x-3.0-rc2.zip",
-                "reference": null,
+                "reference": "29fe3af2a9b01a90674abea068073c9ca3f1293f",
                 "shasum": null
             },
             "require": {
@@ -1261,11 +1261,17 @@
         },
         {
             "name": "drupal/devel",
-            "version": "dev-8.x-1.x",
+            "version": "8.1.0-alpha1",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/devel",
-                "reference": "70a380bf590cfb63a450d84d0f3baab1fb1ec965"
+                "reference": "930b7b89c2fa2047ebbb0fb3ba53f45a67409242"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/devel-8.x-1.0-alpha1.zip",
+                "reference": null,
+                "shasum": null
             },
             "require": {
                 "drupal/core": "8.*"
@@ -1278,8 +1284,7 @@
             },
             "suggest": {
                 "drupal/core": "Required by drupal/devel_generate, drupal/devel_node_access, drupal/kint, drupal/webprofiler",
-                "drupal/menu_ui": "Required by drupal/devel_node_access",
-                "symfony/var-dumper": "Pretty print complex values better with var-dumper available"
+                "drupal/menu_ui": "Required by drupal/devel_node_access"
             },
             "type": "drupal-module",
             "extra": {
@@ -1301,7 +1306,7 @@
             ],
             "description": "Various blocks, pages, and functions for developers.",
             "homepage": "http://drupal.org/project/devel",
-            "time": "2016-09-03 10:12:17"
+            "time": "2016-06-23 14:14:07"
         },
         {
             "name": "drupal/encrypt",
@@ -6198,7 +6203,6 @@
     ],
     "minimum-stability": "dev",
     "stability-flags": {
-        "drupal/devel": 20,
         "drupal/profile": 15,
         "drupal/key": 20,
         "drupal/examples": 20,
