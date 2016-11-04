@@ -26,7 +26,7 @@
         "drupal/core": "8.1.*",
         "drush/drush": "~8.0",
         "drupal/console": "~0.10",
-        "drupal/devel": "8.1.x-dev",
+        "drupal/devel": "8.x",
         "drupal/profile": "^8.1@alpha",
         "drupal/encrypt": "8.x",
         "paragonie/random_compat": "2.0.2 as 1.4.1",
